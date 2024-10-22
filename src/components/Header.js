@@ -5,7 +5,7 @@ const Header = () => {
   
   return (
     <>
-      <div className=" flex justify-center items-center mt-[20px]  w-full h-screen flex-col gap-[50px] font-gilroy text-blue-600 rounded-tl-3xl rounded-tr-3xl ">
+      <div className="bg-blue-500 flex justify-center items-center mt-[20px]  w-full h-screen flex-col gap-[50px] font-gilroy text-blue-600 rounded-tl-3xl rounded-tr-3xl ">
       <h1 className=" text-[36px]  capitalize">Discover one of the best <br /> learning platform </h1>
       <div className="items-center gap-[40px] flex">
         <button
