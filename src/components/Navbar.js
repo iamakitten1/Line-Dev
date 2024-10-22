@@ -1,6 +1,6 @@
 import React from "react";
 
-const Header = () => {
+const Navbar = () => {
   const handleScroll = (id) => {
     const element = document.getElementById(id);
     if (element) {
@@ -28,4 +28,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Navbar;
