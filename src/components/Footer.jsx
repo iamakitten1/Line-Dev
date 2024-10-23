@@ -1,46 +1,46 @@
-import React, { useEffect, useState } from 'react';
-import emailjs from 'emailjs-com'; 
+import React, { useState } from 'react';
+import useSentEmail from '../hooks/useSentEmail';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Footer = () => {
-  
-  const [userEmail, setUserEmail] = useState('');
-  
+  const [input, setInput] = useState('');
+  const { sendEmail } = useSentEmail(); 
 
-  useEffect(() => {
-    emailjs.init("P4RT0txtXIXGBItqN"); // public key
-  }, []);
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
-    const templateParams = { 
-      user_email: userEmail, 
-    };
-
-    emailjs.send('contact_service', 'contact_form', templateParams)
-      .then(() => {
-        console.log('SUCCESS!');
-        setUserEmail('');
-      }, (error) => {
-        console.log('FAILED...', error);
-      });
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const success = await sendEmail({ gmail: input });
+      if (success) {
+        toast.success("Email sent successfully!");
+      } else {
+        toast.error("Failed to send email. Please try again.");
+      }
+    } catch (error) {
+      console.log(error.message);
+      toast.error("Failed to send email. Please try again.");
+    }
   };
 
   return (
     <footer className="relative mt-[10rem] w-screen h-full bg-gradient-to-b from-[#2662D6] to-[#3DB8B1] pb-[48px] pt-[48px]">
+      <ToastContainer />
       <div className="absolute top-[-82px] right-[50px] left-[25%] bg-[#E9EBEF] bg-opacity-80 flex justify-between items-center p-[48px] rounded-3xl max-w-[846px] max-h-[160px]">
         <span className="text-[#000000] text-[24px] font-nino">არ ჩამორჩე სიახლეებს</span>
-        <form onSubmit={handleSubmit} className="flex items-center space-x-20"> 
+        <form onSubmit={handleSubmit} className="flex items-center space-x-20">
           <input
             type="email"
             placeholder="YOUR E-MAIL ADDRESS"
-            value={userEmail}
-            onChange={(e) => setUserEmail(e.target.value)}
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
             className="focus:outline-none bg-[#7BC7D0] bg-opacity-50 rounded-2xl w-[150px] h-[36px] placeholder:text-[#000000] placeholder:text-opacity-70 p-2"
           />
-          <button type="submit" className="font-nino text-[#FFFFFF] text-[20px] bg-gradient-to-b from-[#3EDAD0] to-[#002241] rounded-3xl max-w-[120px] max-h-[36px] w-full h-full p-5 flex justify-center items-center">გამოწერა</button>
+          <button type="submit" className="font-nino text-[#FFFFFF] text-[20px] bg-gradient-to-b from-[#3EDAD0] to-[#002241] rounded-3xl max-w-[120px] max-h-[36px] w-full h-full p-5 flex justify-center items-center">
+            გამოწერა
+          </button>
         </form>
       </div>
+
       <div className="flex justify-evenly mt-[5rem]">
         <div className="flex cursor-pointer flex-col">
           <span className="text-[#FFFFFF] font-gilroy text-[22px] mb-[20px]">ნავიგაცია</span>
