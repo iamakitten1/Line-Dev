@@ -7,7 +7,7 @@ const Footer = () => {
   
 
   useEffect(() => {
-    emailjs.init("service_3fl2p7z"); // Replace with your actual public key
+    emailjs.init("P4RT0txtXIXGBItqN"); // public key
   }, []);
 
   const handleSubmit = (event) => {
