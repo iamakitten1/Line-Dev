@@ -16,11 +16,11 @@ const Navbar = () => {
       <div className="text-[20px] text-[#000000]">
         <nav>
           <ul className="flex items-center gap-[25px]">
-            <li  className="hover:font-light cursor-pointer" onClick={() => handleScroll("courses")}>კურსები</li>
-            <li className="hover:font-light cursor-pointer" onClick={() => handleScroll("aboutUs")}>ჩვენ შესახებ</li>
-            <li className="hover:font-light cursor-pointer"  onClick={() => handleScroll("blog")}>ბლოგი</li>
-            <li className="hover:font-light cursor-pointer" onClick={() => handleScroll("news")}>სიახლეები</li>
-            <li className="hover:font-light cursor-pointer" onClick={() => handleScroll("contact")}>კონტაქტი</li>
+            <li  className="hover:font-light cursor-pointer uppercase" onClick={() => handleScroll("courses")}>კურსები</li>
+            <li className="hover:font-light cursor-pointer uppercase" onClick={() => handleScroll("aboutUs")}>ჩვენ შესახებ</li>
+            <li className="hover:font-light cursor-pointer uppercase"  onClick={() => handleScroll("blog")}>ბლოგი</li>
+            <li className="hover:font-light cursor-pointer uppercase" onClick={() => handleScroll("news")}>სიახლეები</li>
+            <li className="hover:font-light cursor-pointer uppercase" onClick={() => handleScroll("contact")}>კონტაქტი</li>
           </ul>
         </nav>
       </div>

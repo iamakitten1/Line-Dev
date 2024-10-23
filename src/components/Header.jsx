@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <> 
       <div className="flex flex-col ml-[80px] mr-[80px] mt-[21px] justify-center items-center  text-white bg-gradient-to-r from-[#2662D6] to-[#3DB8B1]  h-screen max-w-[] max-h-[500px]  rounded-tl-3xl  rounded-tr-3xl relative  " >
-      <h1 className=" text-[36px]  capitalize">Discover one of the best <br /> learning platform </h1>
+      <h1 className=" text-[36px] font-black capitalize">Discover one of the best <br /> learning platform </h1>
       <div className="items-center gap-[40px] flex">
         <button
           type="button"
