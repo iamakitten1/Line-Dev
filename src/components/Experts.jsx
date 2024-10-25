@@ -1,64 +1,86 @@
-import React from "react";
-import { useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import { Pagination, Navigation } from "swiper/modules";
 
-function Experts() {
-//   const [currentSlide, setCurrentSlide] = useState(0);
-//   const slides = [
-//     { id: 1, src: "giorgi.svg", alt: "photo1" },
-//     { id: 2, src: "vaxo.svg", alt: "photo2" },
-//     { id: 3, src: "nino.svg", alt: "photo3" },
-//   ];
-//   const changeSlide = (direction) => {
-//     const newSlide = (currentSlide + direction + slides.length) % slides.length;
-//     setCurrentSlide(newSlide);
-//   };
+export default function App() {
   return (
-    <div className="mt-[5rem] text-center flex flex-col">
-      <h1 className=" text-4xl font-bold bg-gradient-to-b from-[#2D67D8] to-[#00AEF8] bg-clip-text text-transparent">
+    <>
+      <p className="bg-gradient-to-b from-[#2662D6] to-[#3DB8B1] text-transparent bg-clip-text font-bold text-[36px] text-center mt-[160px]">
         ექსპერტები, რომლებიც წარმართავენ <br /> თქვენს გზას წარმატებისკენ
-      </h1>
+      </p>
 
-      <div className=" space-y-8 flex mt-[30px] justify-center items-center">
-        <img className="mr-[20px]" src="/asset/left.svg" alt="slider_left" />
-        <div className="flex">
-          <img src="/asset/vaxo.svg" alt="img1" />
-          <img src="/asset/nino.svg" alt="img2" />
-          <img src="/asset/giorgi.svg" alt="img3" />
-        </div>
-        <img className="mr-[20px]" src="/asset/right.svg" alt="slider_right" />
+      <div className="flex justify-center mt-[30px] pl-[60px] pr-[60px]">
+        <Swiper
+          spaceBetween={24}
+          slidesPerView={3}
+          navigation={true}
+          modules={[Pagination, Navigation]}
+          className="mySwiper"
+        >
+          <SwiperSlide>
+            <div className="flex justify-center">
+              <img src="/asset/vaxo.svg" alt="img1" />
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="flex justify-center">
+              <img src="/asset/nino.svg" alt="img2" />
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="flex justify-center">
+              <img src="/asset/giorgi.svg" alt="img3" />
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="flex justify-center">
+              <img src="/asset/vaxo.svg" alt="img1" />
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="flex justify-center">
+              <img src="/asset/nino.svg" alt="img2" />
+            </div>
+          </SwiperSlide>
+        </Swiper>
       </div>
 
+      <style jsx>{`
+        .swiper-button-prev,
+        .swiper-button-next {
+          height: 40px;
+          width: 40px;
+          display: flex;
+          align-items: center;
+          justify-content: center; 
+          position: absolute; 
+          top: 50%; 
+          transform: translateY(-50%); 
+        }
 
+        .swiper-button-prev {
+          left: 10px; 
+        }
 
+        .swiper-button-next {
+          right: 10px; 
+        }
 
-        {/* <div className="slider mt-[30px]">
-          <button className="prev mr-[20px]" onClick={() => changeSlide(-1)}>
-            &#10094;
-          </button>
-          <div
-            className="slides-container "
-            style={{
-              transform: `translateX(-${currentSlide * 100}%)`,
-              display: "flex",
-              transition: "transform 0.5s ease-in-out",
-            }}
-          >
-            {slides.map((slide, index) => (
-              <div
-                key={slide.id}
-                className="slide"
-                style={{ minWidth: "auto" }}
-              >
-                <img src={slide.src} alt={slide.alt} />
-              </div>
-            ))}
-          </div>
-          <button className="next mr-[20px]" onClick={() => changeSlide(1)}>
-            &#10095;
-          </button>
-        </div> */}
-      </div>
+        .swiper-button-prev::after,
+        .swiper-button-next::after {
+          border: 1px solid;
+          border-radius: 50%;
+          [border-round:5]
+          border-image: linear-gradient(180deg, #2662d6 0%, #3db8b1 100%) 1; 
+          width: 40px;
+          height: 40px;
+          font-size: 15px;
+          padding-top: 10px;
+          color: #2662D6; 
+        }
+      `}</style>
+    </>
   );
 }
-
-export default Experts;

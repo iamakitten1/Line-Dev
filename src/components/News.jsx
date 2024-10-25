@@ -4,7 +4,7 @@ const News = () => {
   return (
     <>
     <div>
-    <div className=" font-gilroy mt-[250px] flex flex-col items-center gap-[24px] mt-[10rem] flex items-center flex-col w-full h-full">
+    <div className="  gap-[24px] mt-[10rem] flex items-center flex-col w-full h-full">
       <h1 className="text-[36px] bg-gradient-to-b from-[#2662D6] to-[#3DB8B1] bg-clip-text text-transparent">
         ხშირად დასმული შეკითხვები
       </h1>
