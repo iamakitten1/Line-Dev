@@ -12,7 +12,7 @@ const useSentEmail = () => {
     console.log("Template ID: ", templateId);
     console.log("Public Key: ", publicKey);
 
-    const templateParams = { gmail: emailData.gmail };
+    const templateParams = { gmail: emailData.gmail , to_name: "Maia"};
 
     return emailjs
       .send(serviceId, templateId, templateParams, publicKey)

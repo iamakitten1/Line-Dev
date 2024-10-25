@@ -12,6 +12,7 @@ const Footer = () => {
     try {
       const success = await sendEmail({ gmail: input });
       if (success) {
+        setInput('')
         toast.success("Email sent successfully!");
       } else {
         toast.error("Failed to send email. Please try again.");
