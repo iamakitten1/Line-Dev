@@ -23,6 +23,7 @@ const Home = () => {
   return (
     <div>
       <Navbar
+        onHeaderClick={()=> scrollToSection(headerRef)}
         onCoursesClick={() => scrollToSection(coursesRef)}
         onAboutUsClick={() => scrollToSection(mainRef)}
         onBlogClick={() => scrollToSection(expertsRef)}
