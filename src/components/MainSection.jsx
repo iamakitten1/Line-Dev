@@ -3,10 +3,11 @@ import React from 'react'
 const MainSection = () => {
   return  (
     <>
-     <div className="flex mt-[10rem] justify-center items-center">
-     <img src="/asset/frame-21.svg" alt="education" />
+     <div className="ml-2 flex mt-[10rem] justify-center items-center">
+     <img  src="/asset/frame-21.svg" alt="education" />
      <div className="mb-[11rem]">
        <span className=" font-gilroy text-[36px] font-bold bg-gradient-to-b from-[#2662D6] to-[#3DB8B1] bg-clip-text text-transparent">
+        
          Our Education System <br /> Works For You
        </span>
        <p className="w-[548px] mt-[20px] font-[400] text-[18px]">

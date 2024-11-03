@@ -11,7 +11,7 @@ export default function App() {
         ექსპერტები, რომლებიც წარმართავენ <br /> თქვენს გზას წარმატებისკენ
       </p>
 
-      <div className="flex justify-center mt-[30px] pl-[60px] pr-[60px]">
+      <div className=" flex justify-center mt-[30px] pl-[60px] pr-[60px] ml-14 mr-14 ">
         <Swiper
           spaceBetween={24}
           slidesPerView={3}
@@ -19,31 +19,45 @@ export default function App() {
           modules={[Pagination, Navigation]}
           className="mySwiper"
         >
-          <SwiperSlide>
-            <div className="flex justify-center">
-              <img src="/asset/vaxo.svg" alt="img1" />
+          
+          <SwiperSlide  >
+          <div className="flex rounded-2xl w-[302px] h-[355px] justify-center items-bottom slide-content bg-gradient-to-t from-[#2662D6] to-[#FFFFFF]">
+            <img  src="./asset/nino.svg" alt="Person 1" />
+            <div className="absolute text-white text-left font-bold bottom-[20px] left-[30px]">
+              <h2 className="text-[20px]">ნინო ბერიძე</h2>
+              <h3 className="text-[14px]">App მარკეტერი</h3>
             </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="flex justify-center">
-              <img src="/asset/nino.svg" alt="img2" />
+          </div>
+        </SwiperSlide>
+        <SwiperSlide >
+          <div className="flex rounded-2xl w-[302px] h-[355px] justify-center items-bottom slide-content bg-gradient-to-t from-[#2662D6] to-[#FFFFFF] relative">
+            <img  src="/asset/giogri.svg" alt="Person 2" />
+            <div className="absolute text-white text-left font-bold bottom-[20px] left-[30px]">
+              <h2 className="text-[20px]">გიორგი ხუციშვილი</h2>
+              <h3 className="text-[14px]">ინტერიერის დიზაინერი</h3>
             </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="flex justify-center">
-              <img src="/asset/giorgi.svg" alt="img3" />
+          </div>
+        </SwiperSlide>
+        <SwiperSlide >
+          {" "}
+          <div className="flex rounded-2xl w-[302px] h-[355px] justify-center items-bottom slide-content bg-gradient-to-t from-[#2662D6] to-[#FFFFFF] relative">
+            <img className="object-none" src="./asset/vaxo.svg" alt="Person 3" />
+            <div className="absolute text-white text-left font-bold bottom-[20px] left-[30px]">
+              <h2 className="text-[20px]">ვახო შენგელია</h2>
+              <h3 className="text-[14px]">UI & UX დიზაინერი</h3>
             </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="flex justify-center">
-              <img src="/asset/vaxo.svg" alt="img1" />
+          </div>
+        </SwiperSlide>
+        <SwiperSlide >
+          {" "}
+          <div className="flex rounded-2xl w-[302px] h-[355px] justify-center items-bottom slide-content bg-gradient-to-t from-[#2662D6] to-[#FFFFFF] relative">
+            <img className="h-full" src="./asset/giorgi.svg" alt="Person 2" />
+            <div className="absolute text-white text-left font-bold bottom-[20px] left-[30px]">
+              <h2 className="text-[20px]">გიორგი ხუციშვილი</h2>
+              <h3 className="text-[14px]">ინტერიერის დიზაინერი</h3>
             </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="flex justify-center">
-              <img src="/asset/nino.svg" alt="img2" />
-            </div>
-          </SwiperSlide>
+          </div>
+        </SwiperSlide>
         </Swiper>
       </div>
 

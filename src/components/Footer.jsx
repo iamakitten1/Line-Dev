@@ -5,7 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 const Footer = () => {
   const [input, setInput] = useState('');
-  const { sendEmail } = useSentEmail(); 
+  const { sendEmail } = useSentEmail();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -24,7 +24,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="relative mt-[10rem] w-screen h-full bg-gradient-to-b from-[#2662D6] to-[#3DB8B1] pb-[48px] pt-[48px]">
+    <footer className="relative mt-[10rem] w-full h-full bg-gradient-to-b from-[#2662D6] to-[#3DB8B1] pb-[48px] pt-[48px]">
       <ToastContainer />
       <div className="absolute top-[-82px] right-[50px] left-[25%] bg-[#E9EBEF] bg-opacity-80 flex justify-between items-center p-[48px] rounded-3xl max-w-[846px] max-h-[160px]">
         <span className="text-[#000000] text-[24px] font-nino">არ ჩამორჩე სიახლეებს</span>
@@ -68,20 +68,42 @@ const Footer = () => {
           <span className="text-[#FFFFFF] font-gilroy text-[22px] mb-[20px]">გამგოვყევი</span>
           <nav className="flex">
             <ul className="flex gap-[25px] font-nino text-[20px] text-[#FFFFFF] flex-col">
-              <li><a href=""><img src="/asset/Facebook.svg" alt="Facebook" className="w-[150px]" /></a></li>
-              <li><a href=""><img src="/asset/Youtube.svg" alt="Youtube" className="w-[150px]" /></a></li>
-              <li><a href=""><img src="/asset/Instagram.svg" alt="Insta" className="w-[150px]" /></a></li>
-              <li><a href=""><img src="/asset/Tiktok.svg" alt="Tiktok" className="w-[150px]" /></a></li>
+              <li>
+                <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                  <img src="/asset/Facebook.svg" alt="Facebook" className="w-[150px]" />
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
+                  <img src="/asset/Youtube.svg" alt="Youtube" className="w-[150px]" />
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+                  <img src="/asset/Instagram.svg" alt="Insta" className="w-[150px]" />
+                </a>
+              </li>
+              <li>
+                <a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer">
+                  <img src="/asset/Tiktok.svg" alt="Tiktok" className="w-[150px]" />
+                </a>
+              </li>
             </ul>
+
           </nav>
         </div>
         <div className="cursor-pointer">
           <span className="text-[#FFFFFF] font-gilroy text-[22px] mb-[20px]">კონტაქტი</span>
           <nav className="flex mt-[20px]">
             <ul className="flex gap-[25px] font-nino text-[20px] text-[#FFFFFF] flex-col">
-              <li><a href="" className="hover:text-[#C3D5F2]">infro@linedev.ge</a></li>
-              <li><a href="" className="hover:text-[#C3D5F2]">+995 (32) 2 60 60 60 / *7777</a></li>
+              <li>
+                <a href="mailto:info@linedev.ge" className="hover:text-[#C3D5F2]">info@linedev.ge</a>
+              </li>
+              <li>
+                <a href="tel:+995322606060" className="hover:text-[#C3D5F2]">+995 (32) 2 60 60 60 / *7777</a>
+              </li>
             </ul>
+
           </nav>
         </div>
       </div>

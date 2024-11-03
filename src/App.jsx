@@ -8,6 +8,7 @@ import News from './components/News';
 import Footer from './components/Footer';
 import ErrorPage from './components/ErrorPage';
 
+
 function App() {
 
 
@@ -15,15 +16,14 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route index element={<Home/>} />
-          <Route path='/header' element={<Header/>}/>
-          <Route path='/main' element={<MainSection/>}/>
-          <Route path='/experts' element={<Experts/>}/>
-          <Route path='/news' element={<News/>}/>
-          <Route path='/footer' element={<Footer/>}/>
-          <Route path='*' element={<ErrorPage/>}/>
-
           
+            <Route index element={<Home />} />
+            <Route path='/header' element={<Header />} />
+            <Route path='/main' element={<MainSection />} />
+            <Route path='/experts' element={<Experts />} />
+            <Route path='/news' element={<News />} />
+            <Route path='/footer' element={<Footer />} />
+            <Route path='*' element={<ErrorPage />} />
         </Routes>
       </BrowserRouter>
 
