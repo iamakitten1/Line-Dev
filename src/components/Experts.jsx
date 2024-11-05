@@ -4,6 +4,13 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper/modules";
 
+const sliderArr = [
+  { photo: "./asset/nino.svg", name: "ნინო ბერიძე", title: "App მარკეტერი" },
+  { photo: "./asset/giogri.svg", name: "გიორგი ხუციშვილი", title: "ინტერიერის დიზაინერი" },
+  { photo: "./asset/vaxo.svg", name: "ვახო შენგელია", title: "UI & UX დიზაინერი" },
+  { photo: "./asset/nino.svg", name: "ნინო ბერიძე", title: "App მარკეტერი" },
+];
+
 export default function App() {
   return (
     <>
@@ -11,53 +18,37 @@ export default function App() {
         ექსპერტები, რომლებიც წარმართავენ <br /> თქვენს გზას წარმატებისკენ
       </p>
 
-      <div className=" flex justify-center mt-[30px] pl-[60px] pr-[60px] ml-14 mr-14 ">
+      <div className="flex justify-center mt-[30px] px-[60px] ml-14 mr-14 relative">
         <Swiper
-          spaceBetween={24}
+          spaceBetween={0}
           slidesPerView={3}
           navigation={true}
           modules={[Pagination, Navigation]}
           className="mySwiper"
         >
-          
-          <SwiperSlide  >
-          <div className="flex rounded-2xl w-[302px] h-[355px] justify-center items-bottom slide-content bg-gradient-to-t from-[#2662D6] to-[#FFFFFF]">
-            <img  src="./asset/nino.svg" alt="Person 1" />
-            <div className="absolute text-white text-left font-bold bottom-[20px] left-[30px]">
-              <h2 className="text-[20px]">ნინო ბერიძე</h2>
-              <h3 className="text-[14px]">App მარკეტერი</h3>
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide >
-          <div className="flex rounded-2xl w-[302px] h-[355px] justify-center items-bottom slide-content bg-gradient-to-t from-[#2662D6] to-[#FFFFFF] relative">
-            <img  src="/asset/giogri.svg" alt="Person 2" />
-            <div className="absolute text-white text-left font-bold bottom-[20px] left-[30px]">
-              <h2 className="text-[20px]">გიორგი ხუციშვილი</h2>
-              <h3 className="text-[14px]">ინტერიერის დიზაინერი</h3>
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide >
-          {" "}
-          <div className="flex rounded-2xl w-[302px] h-[355px] justify-center items-bottom slide-content bg-gradient-to-t from-[#2662D6] to-[#FFFFFF] relative">
-            <img className="object-none" src="./asset/vaxo.svg" alt="Person 3" />
-            <div className="absolute text-white text-left font-bold bottom-[20px] left-[30px]">
-              <h2 className="text-[20px]">ვახო შენგელია</h2>
-              <h3 className="text-[14px]">UI & UX დიზაინერი</h3>
-            </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide >
-          {" "}
-          <div className="flex rounded-2xl w-[302px] h-[355px] justify-center items-bottom slide-content bg-gradient-to-t from-[#2662D6] to-[#FFFFFF] relative">
-            <img className="h-full" src="./asset/giorgi.svg" alt="Person 2" />
-            <div className="absolute text-white text-left font-bold bottom-[20px] left-[30px]">
-              <h2 className="text-[20px]">გიორგი ხუციშვილი</h2>
-              <h3 className="text-[14px]">ინტერიერის დიზაინერი</h3>
-            </div>
-          </div>
-        </SwiperSlide>
+          {sliderArr.map((item, index) => (
+            <SwiperSlide key={index} style={{ padding: "0 43px" }}> 
+              <div
+                className="slide-content flex justify-center items-center bg-gradient-to-t from-[#2662D6] to-[#FFFFFF] relative"
+                style={{
+                  width: "302px",
+                  height: "355px",
+                  borderRadius: "30px", 
+                  boxShadow: "10px 10px 13px 0px rgba(0, 0, 0, 0.25)",
+                  opacity: 1,
+                  position: "relative",
+                  top: "1px",
+                  margin: "0 24px", 
+                }}
+              >
+                <img src={item.photo} alt={item.name} className="rounded-2xl" />
+                <div className="absolute text-white text-left font-bold bottom-[20px] left-[30px]">
+                  <h2 className="text-[20px]">{item.name}</h2>
+                  <h3 className="text-[14px]">{item.title}</h3>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
         </Swiper>
       </div>
 
@@ -68,31 +59,21 @@ export default function App() {
           width: 40px;
           display: flex;
           align-items: center;
-          justify-content: center; 
-          position: absolute; 
-          top: 50%; 
-          transform: translateY(-50%); 
-        }
-
-        .swiper-button-prev {
-          left: 10px; 
-        }
-
-        .swiper-button-next {
-          right: 10px; 
+          justify-content: center;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          background: white; 
+          border-radius: 50%;
+          color: #2662d6;
+          border: 1px solid #2662d6; 
+          z-index: 10;
         }
 
         .swiper-button-prev::after,
         .swiper-button-next::after {
-          border: 1px solid;
-          border-radius: 50%;
-          [border-round:5]
-          border-image: linear-gradient(180deg, #2662d6 0%, #3db8b1 100%) 1; 
-          width: 40px;
-          height: 40px;
-          font-size: 15px;
-          padding-top: 10px;
-          color: #2662D6; 
+          font-size: 18px;
+          font-weight: bold;
         }
       `}</style>
     </>

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Dropdown from '../hooks/Dropdown';
 
@@ -9,11 +8,12 @@ const News = () => {
         ხშირად დასმული შეკითხვები
       </h1>
 
-      <div className="mt-[2rem] flex flex-col gap-[2rem] w-full h-full justify-center items-center">
+      <div className="mt-[2rem] flex flex-col gap-[2rem] w-[74%] m-auto">
         {[...Array(4)].map((_, index) => (
           <Dropdown
             key={index}
             question="რა სტრატეგიებს იყენებთ ვებაპლიკაციის მუშაობის ოპტიმიზაციისთვის?"
+            answer="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget."
           />
         ))}
       </div>
